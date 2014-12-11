@@ -3,3 +3,16 @@ html
     ion-view(title='Account')
       ion-content.padding
         h1 Account
+        .list
+            label.item.item-input
+                span.input-label Username
+                |     
+                input(type='text', placeholder="Username", ng-model='user.username')
+                |   
+            label.item.item-input
+                span.input-label(type='text', placeholder="Password", ng-model='user.password') Password
+                |     
+                input(type='password', placeholder="Password", ng-model='user.password')
+        button.button.button-block.button-energized(ng-click='login(user)')
+            | Login
+

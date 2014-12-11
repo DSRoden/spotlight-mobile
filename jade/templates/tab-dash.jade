@@ -1,5 +1,12 @@
 html
   body
     ion-view(title='Dashboard')
-      ion-content.padding
-        h1 Dash
+      ion-content.padding      
+        .dashboard(ng-if="dashboard")
+            h1 Dash
+            h3 {{rootuser.username}}
+            a.item.item-avatar.item-button-right
+                img(ng-src='{{rootuser.avatar}}')
+                p {{rootuser.username}}
+                p {{count}}
+                .button.button-positive(ng-click="logout()") Logout

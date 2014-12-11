@@ -2,8 +2,14 @@
 <html>
   <body>
     <ion-view title="Dashboard">
-      <ion-content class="padding">
-        <h1>Dash</h1>
+      <ion-content class="padding">     
+        <div ng-if="dashboard" class="dashboard">
+          <h1>Dash</h1>
+          <h3>{{rootuser.username}}</h3><a class="item item-avatar item-button-right"><img ng-src="{{rootuser.avatar}}">
+            <p>{{rootuser.username}}</p>
+            <p>{{count}}</p>
+            <div ng-click="logout()" class="button button-positive">Logout</div></a>
+        </div>
       </ion-content>
     </ion-view>
   </body>

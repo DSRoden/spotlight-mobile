@@ -1,17 +1,11 @@
-angular.module('starter.controllers', [])
-
-.controller('DashCtrl', function($scope){
-})
+(function(){
+ 'use strict';
+angular.module('starter')
 
 .controller('FriendsCtrl', function($scope, Friends){
-    'use strict';
   $scope.friends = Friends.all();
-})
-
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends){
-    'use strict';
-  $scope.friend = Friends.get($stateParams.friendId);
 })
 
 .controller('AccountCtrl', function($scope){
 });
+})();

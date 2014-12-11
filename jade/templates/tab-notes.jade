@@ -1,0 +1,8 @@
+html
+  body
+    ion-view(title='Notes')
+      ion-content
+      h1 Notes
+        ion-list
+          ion-item(ng-repeat='note in notes', type='item-text-wrap', href='#/tab/note-detail/{{note.note_id}}')
+            | {{note.title}}

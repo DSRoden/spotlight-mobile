@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <ion-view title="Notes">
+      <ion-content></ion-content>
+      <h1>Notes
+        <ion-list>
+          <ion-item ng-repeat="note in notes" type="item-text-wrap" href="#/tab/note-detail/{{note.note_id}}">{{note.title}}</ion-item>
+        </ion-list>
+      </h1>
+    </ion-view>
+  </body>
+</html>
