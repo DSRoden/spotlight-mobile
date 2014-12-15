@@ -1,6 +1,7 @@
 {
     "jscodehints.detectedExclusions": [
         "/Users/PlaceFields/Documents/code/notetaker-mobile/www/js/controllers/account-controller.js",
-        "/Users/PlaceFields/Documents/code/notetaker-mobile/www/js/app.js"
+        "/Users/PlaceFields/Documents/code/notetaker-mobile/www/js/app.js",
+        "/Users/PlaceFields/Documents/code/notetaker-mobile/www/js/controllers/dash-controller.js"
     ]
 }

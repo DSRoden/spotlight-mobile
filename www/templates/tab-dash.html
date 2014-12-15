@@ -10,6 +10,15 @@
             <p>{{count}}</p>
             <div ng-click="logout()" class="button button-positive">Logout</div></a>
         </div>
+        <h3>Global Chat</h3>
+        <div id="messages" class="panel callout radius">
+          <div ng-repeat="message in messages" class="message">
+            <div style="background-image:url(&quot;{{message.avatar}}&quot;)" class="avatar"></div>
+            <div class="content">{{message.content}}</div>
+          </div>
+        </div>
+        <input id="message" type="text" ng-model="message">
+        <button ng-click="chat(message)" class="success tiny radius">Send Message</button>
       </ion-content>
     </ion-view>
   </body>

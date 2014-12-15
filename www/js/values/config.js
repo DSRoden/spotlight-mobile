@@ -1,5 +1,8 @@
 (function(){
     'use strict';
     angular.module('starter')
-    .value('origin', 'https://damp-depths-3640.herokuapp.com');
+    .value('origin', 'http://localhost:8080')
+    .value('socketUrl', 'http://localhost:8080');
 })();
+
+// heroku url:   https://damp-depths-3640.herokuapp.com

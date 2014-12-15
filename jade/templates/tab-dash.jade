@@ -10,3 +10,10 @@ html
                 p {{rootuser.username}}
                 p {{count}}
                 .button.button-positive(ng-click="logout()") Logout
+        h3 Global Chat
+        #messages.panel.callout.radius
+            .message(ng-repeat='message in messages')
+                .avatar(style='background-image:url("{{message.avatar}}")')
+                .content {{message.content}}
+        input#message(type='text', ng-model='message')
+        button.success.tiny.radius(ng-click='chat(message)') Send Message

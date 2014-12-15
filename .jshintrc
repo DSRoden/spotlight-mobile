@@ -22,5 +22,5 @@
   "browser": true,
   "jquery": true,
 
-  "globals": {"angular":true, "_":true, "toastr":true, "cordova":true, "StatusBar":true, "Camera": true}
+  "globals": {"angular":true, "_":true, "toastr":true, "cordova":true, "StatusBar":true, "Camera": true, "io": true}
 }
