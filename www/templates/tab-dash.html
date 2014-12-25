@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <ion-view title="Dashboard">
+    <ion-view title="SPOTLIGHT">
       <ion-content class="padding">     
-        <div ng-if="dashboard" class="dashboard">
-          <h1>Dash</h1>
-          <h3>{{rootuser.username}}</h3><a class="item item-avatar item-button-right"><img ng-src="{{rootuser.avatar}}">
-            <p>{{rootuser.username}}</p>
-            <p>{{count}}</p>
-            <div ng-click="logout()" class="button button-positive">Logout</div></a>
-        </div>
-        <h3>Global Chat</h3>
-        <div id="messages" class="panel callout radius">
-          <div ng-repeat="message in messages" class="message">
-            <div style="background-image:url(&quot;{{message.avatar}}&quot;)" class="avatar"></div>
-            <div class="content">{{message.content}}</div>
+        <div ng-if="signedIn" ng-click="logout()" class="button button-positive">Logout</div>
+        <h3>Updates
+          <div id="messages" class="panel callout radius">
+            <div ng-repeat="update in updates | orderBy: 'time': true" ng-class="{message : update.content}" class="updates">
+              <div ng-if="update.url" class="photo"><img ng-src="{{update.url}}"></div>
+              <div class="content">{{update.content}}</div>
+            </div>
           </div>
-        </div>
-        <input id="message" type="text" ng-model="message">
-        <button ng-click="chat(message)" class="success tiny radius">Send Message</button>
+        </h3>
       </ion-content>
     </ion-view>
   </body>
