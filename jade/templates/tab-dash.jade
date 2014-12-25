@@ -3,12 +3,38 @@ html
     ion-view(title='SPOTLIGHT')
       ion-content.padding      
         .button.button-positive(ng-if="signedIn", ng-click="logout()") Logout
-        h3 Updates
-          #messages.panel.callout.radius
-            .updates(ng-repeat="update in updates | orderBy: 'time': true", ng-class="{message : update.content}")
+        
+        .row(ng-if="confirmed")
+          .col.col-75
+            .spotlight You are the winner! Take the spotlight by entering today's password: 
+            input#spotlightpass(type='password', ng-model='spotlight.password')
+          .col    
+            button.success.tiny.radius(ng-click='validate()') Sumbit Password
+
+        .row(ng-if="validated")
+          .col
+            h3 Spotlight
+            #messages.panel.callout.radius
+              .updates(ng-repeat="update in updates | orderBy: 'time': true", ng-class="{message : update.content}")
                 .photo(ng-if="update.url")
                   img(ng-src="{{update.url}}")
                 .content {{update.content}}
+                      
+                    
+        .row(ng-if="validated")
+          .col.col-75
+            input#message(type='text', ng-model='message.content')
+            button.success.tiny.radius(ng-click='chat(message.content)') Send Message
+
+
+        .row(ng-if="!validated")
+          .col
+            h3 Updates
+              #messages.panel.callout.radius
+                .updates(ng-repeat="update in updates | orderBy: 'time': true", ng-class="{message : update.content}")
+                  .photo(ng-if="update.url")
+                    img(ng-src="{{update.url}}")
+                  .content {{update.content}}
 
                 
             

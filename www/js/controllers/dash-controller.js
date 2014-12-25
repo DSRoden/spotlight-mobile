@@ -112,6 +112,7 @@
           $scope.$apply(function(){
             $scope.confirmed = true;
             $scope.validated = false;
+            console.log('confirmed>>>>', $scope.confirmed);
           });
         } else {
           $scope.$apply(function(){
