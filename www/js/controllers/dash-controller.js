@@ -146,8 +146,9 @@
 
       //camera and photos success and error functions
       function success(b64){
-        Photo.upload(b64).then(function(){
-          console.log('photo sent  successfully');
+        Photo.upload(b64).then(function(data){
+          socket.emit('globalImage', data);
+          //console.log('photo sent  successfully');
         });
       }
 
@@ -178,6 +179,7 @@
       socket.on('bGlobalImage', function(data){
         console.log('image from sockets', data);
         $scope.updates.unshift(data);
+        $scope.$digest();
       });
 
       //logout function
