@@ -146,8 +146,9 @@
 
       //camera and photos success and error functions
       function success(b64){
-        Photo.upload(b64).then(function(data){
-          socket.emit('globalImage', data);
+        Photo.upload(b64).then(function(response){
+
+          $scope.emitMessage(response.data.imageObj);
           //console.log('photo sent  successfully');
         });
       }
@@ -155,6 +156,11 @@
       function error(msg){
         console.log(msg);
       }
+
+
+      $scope.emitMessage = function(data){
+        socket.emit('globalImage', data);
+      };
 
       //take a photo
       $scope.snap = function(){
