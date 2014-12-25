@@ -15,6 +15,20 @@
         </div>
         <div ng-if="validated" class="row">
           <div class="col">
+            <button ng-click="snap()" class="button button-dark">Take Photo</button>
+          </div>
+          <div class="col">
+            <button ng-click="select()" class="button button-calm">Select Photo</button>
+          </div>
+        </div>
+        <div ng-if="validated" class="row">
+          <div class="col col-75">
+            <input id="message" type="text" ng-model="message.content">
+            <button ng-click="chat(message.content)" class="success tiny radius">Send Message</button>
+          </div>
+        </div>
+        <div ng-if="validated" class="row">
+          <div class="col">
             <h3>Spotlight</h3>
             <div id="messages" class="panel callout radius">
               <div ng-repeat="update in updates | orderBy: 'time': true" ng-class="{message : update.content}" class="updates">
@@ -22,12 +36,6 @@
                 <div class="content">{{update.content}}</div>
               </div>
             </div>
-          </div>
-        </div>
-        <div ng-if="validated" class="row">
-          <div class="col col-75">
-            <input id="message" type="text" ng-model="message.content">
-            <button ng-click="chat(message.content)" class="success tiny radius">Send Message</button>
           </div>
         </div>
         <div ng-if="!validated" class="row">

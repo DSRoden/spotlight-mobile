@@ -2,7 +2,7 @@
     'use strict';
     angular.module('starter')
 
-    .controller('DashCtrl', function($rootScope, $scope, $state, User, Message, socketUrl){
+    .controller('DashCtrl', function($rootScope, $scope, $state, User, Message, socketUrl, Photo){
       console.log($rootScope.rootuser);
       //estalishing socket connection
       var socket = io.connect(socketUrl);
@@ -28,13 +28,6 @@
         $scope.updates = _.union($scope.photos, $scope.messages);
       };
 
-      //make a call to db to get all messages for current day
-      Message.getAll().then(function(response){
-        //console.log(response);
-        $scope.messages = response.data;
-        $scope.merge();
-      });
-
       //check to see if rootuser is in the spotlight
       User.isSpotlightOn().then(function(response){
         //console.log('response from isSpotlightOn', response);
@@ -42,6 +35,15 @@
         $scope.validated = (response.data.validated) ? true : false;
         if($scope.validated){$scope.confirmed = false;}
       });
+
+
+      //make a call to db to get all messages for current day
+      Message.getAll().then(function(response){
+        //console.log(response);
+        $scope.messages = response.data;
+        $scope.merge();
+      });
+
 
       //validate the winner's password
       $scope.validate = function(){
@@ -132,13 +134,50 @@
         });
       };
 
-
+      //adding new message to messages
       socket.on('bGlobalChat', function(data){
         console.log(data);
         $scope.updates.unshift(data);
         // $scope.messages = $scope.messages.slice(0, 100);
         $scope.message = null;
         $scope.$digest();
+      });
+
+
+      //camera and photos success and error functions
+      function success(b64){
+        Photo.upload(b64).then(function(){
+          console.log('photo sent  successfully');
+        });
+      }
+
+      function error(msg){
+        console.log(msg);
+      }
+
+      //take a photo
+      $scope.snap = function(){
+        var options = {
+          quality : 75,
+          destinationType: Camera.DestinationType.DATA_URL
+        };
+        navigator.camera.getPicture(success, error, options);
+      };
+
+      //select a photo
+      $scope.select = function(){
+        var options = {
+          quality : 75,
+          destinationType: Camera.DestinationType.DATA_URL,
+          sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+        };
+        navigator.camera.getPicture(success, error, options);
+      };
+
+      //getting back image from sockets
+      socket.on('bGlobalImage', function(data){
+        console.log('image from sockets', data);
+        $scope.updates.unshift(data);
       });
 
       //logout function

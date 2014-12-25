@@ -10,7 +10,19 @@ html
             input#spotlightpass(type='password', ng-model='spotlight.password')
           .col    
             button.success.tiny.radius(ng-click='validate()') Sumbit Password
+        
+        .row(ng-if="validated")
+          .col
+            button.button.button-dark(ng-click='snap()') Take Photo
+          .col
+            button.button.button-calm(ng-click='select()') Select Photo
+        
 
+        .row(ng-if="validated")
+          .col.col-75
+            input#message(type='text', ng-model='message.content')
+            button.success.tiny.radius(ng-click='chat(message.content)') Send Message
+              
         .row(ng-if="validated")
           .col
             h3 Spotlight
@@ -19,12 +31,6 @@ html
                 .photo(ng-if="update.url")
                   img(ng-src="{{update.url}}")
                 .content {{update.content}}
-                      
-                    
-        .row(ng-if="validated")
-          .col.col-75
-            input#message(type='text', ng-model='message.content')
-            button.success.tiny.radius(ng-click='chat(message.content)') Send Message
 
 
         .row(ng-if="!validated")

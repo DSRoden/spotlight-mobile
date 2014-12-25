@@ -15,9 +15,9 @@
         });
         }
 
-    function error(msg){
-      console.log(msg);
-    }
+        function error(msg){
+          console.log(msg);
+        }
 
         $scope.snap = function(){
             var options = {
