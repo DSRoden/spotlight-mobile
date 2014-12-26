@@ -28,6 +28,11 @@
         $scope.updates = _.union($scope.photos, $scope.messages);
       };
 
+      //make a call to db to get all photos for current day
+      Photo.getAll().then(function(response){
+        $scope.photos = response.data;
+      });
+
       //check to see if rootuser is in the spotlight
       User.isSpotlightOn().then(function(response){
         //console.log('response from isSpotlightOn', response);
