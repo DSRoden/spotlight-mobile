@@ -1,53 +1,71 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <ion-view title="SPOTLIGHT">
-      <ion-content class="padding">     
-        <div ng-if="signedIn" ng-click="logout()" class="button button-positive">Logout</div>
+    <ion-view class="sl-curtains">
+      <ion-content class="padding">
         <div ng-if="confirmed" class="row">
-          <div class="col col-75">
-            <div class="spotlight">You are the winner! Take the spotlight by entering today's password: </div>
-            <input id="spotlightpass" type="password" ng-model="spotlight.password">
-          </div>
-          <div class="col">   
-            <button ng-click="validate()" class="success tiny radius">Sumbit Password</button>
-          </div>
-        </div>
-        <div ng-if="validated" class="row">
-          <div class="col">
-            <button ng-click="snap()" class="button button-dark">Take Photo</button>
-          </div>
-          <div class="col">
-            <button ng-click="select()" class="button button-calm">Select Photo</button>
-          </div>
-        </div>
-        <div ng-if="validated" class="row">
-          <div class="col col-75">
-            <input id="message" type="text" ng-model="message.content">
-            <button ng-click="chat(message.content)" class="success tiny radius">Send Message</button>
-          </div>
-        </div>
-        <div ng-if="validated" class="row">
-          <div class="col">
-            <h3>Spotlight</h3>
-            <div id="messages" class="panel callout radius">
-              <div ng-repeat="update in updates | orderBy: 'time': true" ng-class="{message : update.content}" class="updates">
-                <div ng-if="update.url" class="photo"><img ng-src="{{update.url}}"></div>
-                <div class="content">{{update.content}}</div>
-              </div>
+          <div class="card">
+            <div class="item item-divider sl-text">Congrats! You've won today's lottery!</div>
+            <div class="item">
+              <input id="spotlightpass" type="password" placeholder="Please enter the password here." ng-model="spotlight.password">
+            </div>
+            <div class="item item-divider">
+              <div ng-click="validate()" class="button-spotlight-pass">Sumbit Password</div>
             </div>
           </div>
         </div>
-        <div ng-if="!validated" class="row">
+        <div ng-if="validated" class="row">
+          <div class="col-33">
+            <div ng-click="snap()" class="take-photo">Take Photo</div>
+          </div>
+          <div class="col-33">
+            <div ng-click="select()" class="select-photo">Select Photo</div>
+          </div>
+          <div class="col-33">
+            <div ng-click="advice = true" class="advice">?</div>
+          </div>
+        </div>
+        <div ng-if="validated" class="row">
           <div class="col">
-            <h3>Updates
+            <textarea id="message" ng-model="message.content"></textarea>
+          </div>
+        </div>
+        <div ng-if="validated" class="row">
+          <div class="col">
+            <div ng-click="chat(message.content)" class="send">Send</div>
+          </div>
+        </div>
+        <div ng-if="validated || !validated" class="row">
+          <div class="col">
+            <div class="spotlight-stream-header">SPOTLIGHT STREAM</div>
+            <div class="spotlight-stream">
               <div id="messages" class="panel callout radius">
-                <div ng-repeat="update in updates | orderBy: 'time': true" ng-class="{message : update.content}" class="updates">
-                  <div ng-if="update.url" class="photo"><img ng-src="{{update.url}}"></div>
-                  <div class="content">{{update.content}}</div>
+                <div ng-repeat="update in updates | orderBy: 'time': true" ng-class="{text : update.content}" class="updates">
+                  <div ng-if="update.url" class="photo">
+                    <div class="list card">
+                      <div class="item item-image"><img ng-src="{{update.url}}"></div>
+                      <div class="item">
+                        <div class="col-33"></div>
+                        <div class="col-33"></div>
+                        <div class="col-33 date">{{update.time | date : "h:mma"}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="list card">
+                      <div class="item item-body">
+                        <p>{{update.content}}</p>
+                      </div>
+                      <div class="item">
+                        <div class="col-33"></div>
+                        <div class="col-33"></div>
+                        <div class="col-33 date">{{update.time | date : "h:mma"}}</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </h3>
+            </div>
           </div>
         </div>
       </ion-content>

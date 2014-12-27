@@ -4,20 +4,301 @@ in ionic's _variables.scss file.
 
 For example, you might change some of the default colors:
 
+*/
 $light:                           #fff !default;
 $stable:                          #f8f8f8 !default;
-$positive:                        #387ef5 !default;
+$positive:                        #0d60d9 !default;
 $calm:                            #11c1f3 !default;
 $balanced:                        #33cd5f !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #ef473a !default;
+$energized:                       #ffd700 !default;
+$assertive:                       #ee2c2c  !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
-*/
+
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+@import url(http://fonts.googleapis.com/css?family=Voltaire);
 
+.sl-curtains {
+  background-image: url('/img/curtains_blue.jpg');
+  background-size: cover;
+}
+
+.logo-title {
+  margin-top: 15%;
+  text-align: center;
+  font-family: 'Voltaire', sans-serif;
+  font-size: 4em;
+  color: white;
+}
+
+.logo {
+  height: 7em;
+  width: 7em;
+  border-radius: 100%;
+  border: 5px solid $energized;
+  margin: 0 auto;
+  margin-top: 13%;
+}
+
+.logo-background-1 {
+  background-image: url('/img/curtains.jpg');
+  background-size: cover;
+}
+
+.slogan {
+  text-align: center;
+  font-family: 'Voltaire', sans-serif;
+  font-size: 30px;
+  color: white;
+  margin-top: 9%;
+}
+
+
+.login-button {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 10%;
+  z-index: $z-index-badge;
+  height: 4.6em;
+  width: 4.6em;
+  background-color: white;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 100%;
+  background-color: $positive;
+  color: white;
+  font-family: 'Voltaire', sans-serif;
+  font-size: 1em;
+}
+
+.loginactive {
+  background-image: url('/img/curtains.jpg');
+  background-size: cover;
+  z-index: $z-index-item;
+}
+
+.joinactive {
+  background-image: url('/img/curtains.jpg');
+  background-size: cover;
+  z-index: $z-index-item;
+}
+
+
+.account-buttons-background-login {
+  position: relative;
+  margin: 0 auto;
+  margin-top: -9em;
+  z-index: $z-index-menu;
+  height: 5.2em;
+  width: 5.2em;
+  background-color: $energized;
+  text-align: center;
+  line-height: 55px;
+  border-radius: 100%;
+}
+
+.join-button {
+  position: relative;
+  margin: 0 auto;
+  margin-top: -.5em;
+  z-index: $z-index-badge;
+  height: 4.6em;
+  width: 4.6em;
+  background-color: white;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 100%;
+  background-color: $positive;
+  color: white;
+  font-family: 'Voltaire', sans-serif;
+  font-size: 1em;
+}
+
+.account-buttons-background-join {
+  position: relative;
+  margin: 0 auto;
+  margin-top: -1.1em;
+  z-index: $z-index-menu;
+  height: 5.2em;
+  width: 5.2em;
+  background-color: $energized;
+  text-align: center;
+  line-height: 55px;
+  border-radius: 100%;
+}
+
+
+.login {
+}
+
+.sl-input-field-username-login{
+  width: 250px;
+  border-radius: 15px;
+  margin: 0 auto;
+  margin-top: 13%;
+  text-align: center;
+}
+
+.sl-input-field-password-login{
+  top: 100px;
+  width: 250px;
+  border-radius: 15px;
+  margin: 0 auto;
+  margin-top: 2%;
+  text-align: center;
+}
+
+.signin-button {
+  margin: 0 auto;
+  margin-top: 8%;
+  margin-bottom: 10.5%;
+  height: 3.2em;
+  width: 150px;
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 3.2em;
+  background-image: url('/img/curtains_yellow.jpg');
+  background-size: cover;
+  background-color: $energized;
+  font-family: 'Voltaire', sans-serif;
+  color: $positive
+}
+
+.join {
+  margin-left: 6px;
+  margin-top: 13%;
+  display: inline-block;
+}
+
+.sl-input-field-join {
+  width: 150px;
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.register-button {
+  margin: 0 auto;
+  margin-top: 32%;
+  margin-bottom: 1%;
+  height: 3.2em;
+  width: 150px;
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 3.2em;
+  background-image: url('/img/curtains_yellow.jpg');
+  background-size: cover;
+  background-color: $energized;
+  font-family: 'Voltaire', sans-serif;
+  color: $positive;
+}
+
+//spotlight priviliges
+
+#message {
+  height: 100px;
+}
+
+
+//spotlight page
+
+.sl-text {
+  font-family: 'Voltaire', sans-serif;
+}
+
+.button-spotlight-pass {
+  background-image: url('/img/curtains_yellow.jpg');
+  background-size: cover;
+  text-align: center;
+  height: 30px;
+  border: 1px solid $positive;
+  color: $positive;
+  line-height: 30px;
+  border-radius: 15px;
+  font-family: 'Voltaire', sans-serif;
+}
+
+.image-border {
+  border: 2px solid $energized;
+}
+
+
+.spotlight-stream-header {
+  background-image: url('/img/curtains_yellow.jpg');
+  background-size: cover;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  margin-bottom: 0;
+  font-family: 'Voltaire', sans-serif;
+}
+
+.spotlight-stream {
+  background-image: url('/img/curtains_yellow_horizontal_narrow.jpg');
+  background-size: cover;
+  margin-top: -10px;
+}
+
+.take-photo {
+  background-color: $positive;
+  color: white;
+  text-align: center;
+  height: 40px;
+  line-height: 2.3em;
+  font-family: 'Voltaire', sans-serif;
+  font-size: 1.2em;
+  margin: 0;
+  //border-radius: 15px;
+  border: 1px solid $energized;
+}
+
+.select-photo {
+  background-color: $positive;
+  color: white;
+  text-align: center;
+  height: 40px;
+  line-height: 2.3em;
+  font-family: 'Voltaire', sans-serif;
+  font-size: 1.2em;
+  margin-left: 2px;
+  //border-radius: 15px;
+  border: 1px solid $energized;
+}
+
+.advice {
+  background-image: url('/img/curtains_blue.jpg');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  height: 40px;
+  line-height: 2.3em;
+  font-family: 'Voltaire', sans-serif;
+  font-size: 1.2em;
+  margin-left: 2px;
+  //border-radius: 15px;
+  border: 1px solid $energized;
+}
+
+.send {
+  height: 40px;
+  background-color: $balanced;
+  text-align: center;
+  font-family: 'Voltaire', sans-serif;
+  font-size: 20px;
+  line-height: 2em;
+  margin-top: -8px;
+}
+
+.date {
+  float: right;
+  font-size: .7em;
+}

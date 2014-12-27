@@ -1,9 +1,8 @@
 (function(){
     'use strict';
     angular.module('starter')
-
     .controller('DashCtrl', function($rootScope, $scope, $state, User, Message, socketUrl, Photo){
-      console.log($rootScope.rootuser);
+
       //estalishing socket connection
       var socket = io.connect(socketUrl);
       $scope.message = {};
@@ -20,8 +19,6 @@
 
       //photo testing
       $scope.photos =[];
-      $scope.photos.push({time: '2014-12-24T19:56:25.745Z', url: 'https://cdn3.iconfinder.com/data/icons/pictofoundry-pro-vector-set/512/Avatar-512.png'});
-      $scope.photos.push({time: '2014-12-24T20:40:29.793Z', url: 'https://cdn3.iconfinder.com/data/icons/pictofoundry-pro-vector-set/512/Avatar-512.png'});
 
       //merge photos and messages
       $scope.merge = function(){
@@ -31,6 +28,8 @@
       //make a call to db to get all photos for current day
       Photo.getAll().then(function(response){
         $scope.photos = response.data;
+        $scope.photos.push({time: '2014-12-24T19:56:25.745Z', url: 'https://cdn3.iconfinder.com/data/icons/pictofoundry-pro-vector-set/512/Avatar-512.png'});
+        $scope.photos.push({time: '2014-12-24T20:40:29.793Z', url: 'https://cdn3.iconfinder.com/data/icons/pictofoundry-pro-vector-set/512/Avatar-512.png'});
       });
 
       //check to see if rootuser is in the spotlight
@@ -46,7 +45,9 @@
       Message.getAll().then(function(response){
         //console.log(response);
         $scope.messages = response.data;
+        $scope.messages.push({time: '2014-12-24T19:56:25.745Z', content: 'hello'});
         $scope.merge();
+        console.log('all updates after merge', $scope.updates);
       });
 
 

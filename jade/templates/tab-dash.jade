@@ -1,46 +1,57 @@
 html
   body
-    ion-view(title='SPOTLIGHT')
-      ion-content.padding      
-        .button.button-positive(ng-if="signedIn", ng-click="logout()") Logout
+    ion-view.sl-curtains
+      ion-content.padding
+
+        //-.button.button-positive(ng-if="signedIn", ng-click="logout()") Logout
         
         .row(ng-if="confirmed")
-          .col.col-75
-            .spotlight You are the winner! Take the spotlight by entering today's password: 
-            input#spotlightpass(type='password', ng-model='spotlight.password')
-          .col    
-            button.success.tiny.radius(ng-click='validate()') Sumbit Password
+          .card
+            .item.item-divider.sl-text Congrats! You've won today's lottery!
+            .item
+              input#spotlightpass(type='password', placeholder="Please enter the password here.", ng-model='spotlight.password')    
+            .item.item-divider
+              .button-spotlight-pass(ng-click='validate()') Sumbit Password
         
         .row(ng-if="validated")
-          .col
-            button.button.button-dark(ng-click='snap()') Take Photo
-          .col
-            button.button.button-calm(ng-click='select()') Select Photo
-        
+          .col-33
+            .take-photo(ng-click='snap()') Take Photo
+          .col-33
+            .select-photo(ng-click='select()') Select Photo
+          .col-33
+            .advice(ng-click='advice = true') ?
 
         .row(ng-if="validated")
-          .col.col-75
-            input#message(type='text', ng-model='message.content')
-            button.success.tiny.radius(ng-click='chat(message.content)') Send Message
-              
+          .col
+            textarea#message(ng-model='message.content')
+          
         .row(ng-if="validated")
           .col
-            h3 Spotlight
-            #messages.panel.callout.radius
-              .updates(ng-repeat="update in updates | orderBy: 'time': true", ng-class="{message : update.content}")
-                .photo(ng-if="update.url")
-                  img(ng-src="{{update.url}}")
-                .content {{update.content}}
+            .send(ng-click='chat(message.content)') Send
 
 
-        .row(ng-if="!validated")
+        .row(ng-if="validated || !validated")
           .col
-            h3 Updates
+            .spotlight-stream-header SPOTLIGHT STREAM
+            .spotlight-stream
               #messages.panel.callout.radius
-                .updates(ng-repeat="update in updates | orderBy: 'time': true", ng-class="{message : update.content}")
+                .updates(ng-repeat="update in updates | orderBy: 'time': true", ng-class="{text : update.content}")
                   .photo(ng-if="update.url")
-                    img(ng-src="{{update.url}}")
-                  .content {{update.content}}
+                    .list.card
+                      .item.item-image
+                        img(ng-src="{{update.url}}")
+                      .item
+                        .col-33
+                        .col-33
+                        .col-33.date {{update.time | date : "h:mma"}}
+                  .content
+                    .list.card
+                      .item.item-body
+                        p {{update.content}}
+                      .item
+                        .col-33
+                        .col-33
+                        .col-33.date {{update.time | date : "h:mma"}}
 
-                
+                  
             

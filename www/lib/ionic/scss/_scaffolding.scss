@@ -32,7 +32,6 @@ body,
 
   margin: 0;
   padding: 0;
-
   color: $base-color;
   word-wrap: break-word;
   font-size: $font-size-base;
@@ -52,6 +51,7 @@ body.grade-c {
 .content {
   // used for content areas not using the content directive
   position: relative;
+  background: red;
 }
 
 .scroll-content {

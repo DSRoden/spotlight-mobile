@@ -70,7 +70,6 @@ angular.module('starter', ['ionic', 'starter.services'])
         }
       }
     })
-
     .state('tab.account', {
       url: '/account',
       views: {

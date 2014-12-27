@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <ion-view title="Account">
-      <ion-content class="padding">
-        <h1>Account</h1>
-        <div class="list">
-          <label class="item item-input"><span class="input-label">Username</span>    
-            <input type="text" placeholder="Username" ng-model="user.username">  
-          </label>
-          <label class="item item-input"><span type="text" placeholder="Password" ng-model="user.password" class="input-label">Password</span>    
-            <input type="password" placeholder="Password" ng-model="user.password">
-          </label>
+    <ion-view title="Account" class="sl-curtains">
+      <ion-content class="paddings">
+        <div ng-show="account" ng-click="showLogo()" class="logo-title">SPOTLIGHT</div>
+        <div ng-show="login" class="login">
+          <input type="text" placeholder="Username" ng-model="user.username" class="sl-input-field-username-login">
+          <input type="password" placeholder="Password" ng-model="user.password" class="sl-input-field-password-login">
+          <div ng-click="signin(user)" class="signin-button">Let me in, let me in!</div>
         </div>
-        <button ng-click="login(user)" class="button button-block button-energized">Login</button>
+        <div ng-show="join" class="join">
+          <input type="text" placeholder="Username (A Must)" ng-model="user.username" class="sl-input-field-join">
+          <input type="email" placeholder="Email (A Must)" ng-model="user.email" class="sl-input-field-join">
+          <input type="text" placeholder="Phone (Optional)" ng-model="user.phone" class="sl-input-field-join">
+          <input type="password" placeholder="Password (Shhh!)" ng-model="user.password" class="sl-input-field-join">
+          <div ng-click="register(user)" class="register-button">Enjoy the show!</div>
+        </div>
+        <div ng-show="logo" class="logo logo-background-1"></div>
+        <div ng-show="logo" class="slogan">a new story every day </div>
+        <div ng-show="account" class="account-buttons">
+          <div ng-click="showLogin()" ng-class="{loginactive:login}" class="login-button">Login</div>
+          <div ng-click="showJoin()" ng-class="{joinactive: join}" class="join-button">Join</div>
+          <div class="account-buttons-background-login"></div>
+          <div class="account-buttons-background-join"></div>
+        </div>
       </ion-content>
     </ion-view>
   </body>

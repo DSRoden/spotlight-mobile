@@ -6,7 +6,7 @@
 
     function getAll(){
       //console.log('getting all photos');
-      return $http.get('/photos');
+      return $http.get(origin + '/photos');
     }
 
     function upload(b64){
