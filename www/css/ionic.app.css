@@ -7809,7 +7809,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   transition: none !important; }
 
 .sl-curtains {
-  background-image: url('/img/curtains_blue.jpg');
+  background-image: url('img/curtains_blue.jpg');
   background-size: cover; }
 
 .logo-title {
@@ -7828,7 +7828,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   margin-top: 13%; }
 
 .logo-background-1 {
-  background-image: url('/img/curtains.jpg');
+  background-image: url('img/curtains.jpg');
   background-size: cover; }
 
 .slogan {
@@ -7855,12 +7855,12 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   font-size: 1em; }
 
 .loginactive {
-  background-image: url('/img/curtains.jpg');
+  background-image: url('img/curtains.jpg');
   background-size: cover;
   z-index: 2; }
 
 .joinactive {
-  background-image: url('/img/curtains.jpg');
+  background-image: url('img/curtains.jpg');
   background-size: cover;
   z-index: 2; }
 
@@ -7929,7 +7929,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   border-radius: 15px;
   text-align: center;
   line-height: 3.2em;
-  background-image: url('/img/curtains_yellow.jpg');
+  background-image: url('img/curtains_yellow.jpg');
   background-size: cover;
   background-color: #ffd700;
   font-family: 'Voltaire', sans-serif;
@@ -7958,7 +7958,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   border-radius: 15px;
   text-align: center;
   line-height: 3.2em;
-  background-image: url('/img/curtains_yellow.jpg');
+  background-image: url('img/curtains_yellow.jpg');
   background-size: cover;
   background-color: #ffd700;
   font-family: 'Voltaire', sans-serif;
@@ -7971,7 +7971,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   font-family: 'Voltaire', sans-serif; }
 
 .button-spotlight-pass {
-  background-image: url('/img/curtains_yellow.jpg');
+  background-image: url('img/curtains_yellow.jpg');
   background-size: cover;
   text-align: center;
   height: 30px;
@@ -7985,7 +7985,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   border: 2px solid #ffd700; }
 
 .spotlight-stream-header {
-  background-image: url('/img/curtains_yellow.jpg');
+  background-image: url('img/curtains_yellow.jpg');
   background-size: cover;
   text-align: center;
   line-height: 50px;
@@ -7994,7 +7994,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   font-family: 'Voltaire', sans-serif; }
 
 .spotlight-stream {
-  background-image: url('/img/curtains_yellow_horizontal_narrow.jpg');
+  background-image: url('img/curtains_yellow_horizontal_narrow.jpg');
   background-size: cover;
   margin-top: -10px; }
 
@@ -8021,7 +8021,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   border: 1px solid #ffd700; }
 
 .advice {
-  background-image: url('/img/curtains_blue.jpg');
+  background-image: url('img/curtains_blue.jpg');
   background-size: cover;
   color: white;
   text-align: center;

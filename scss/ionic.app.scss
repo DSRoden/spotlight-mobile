@@ -24,7 +24,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import url(http://fonts.googleapis.com/css?family=Voltaire);
 
 .sl-curtains {
-  background-image: url('/img/curtains_blue.jpg');
+  background-image: url('img/curtains_blue.jpg');
   background-size: cover;
 }
 
@@ -46,7 +46,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .logo-background-1 {
-  background-image: url('/img/curtains.jpg');
+  background-image: url('img/curtains.jpg');
   background-size: cover;
 }
 
@@ -77,13 +77,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .loginactive {
-  background-image: url('/img/curtains.jpg');
+  background-image: url('img/curtains.jpg');
   background-size: cover;
   z-index: $z-index-item;
 }
 
 .joinactive {
-  background-image: url('/img/curtains.jpg');
+  background-image: url('img/curtains.jpg');
   background-size: cover;
   z-index: $z-index-item;
 }
@@ -163,7 +163,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   border-radius: 15px;
   text-align: center;
   line-height: 3.2em;
-  background-image: url('/img/curtains_yellow.jpg');
+  background-image: url('img/curtains_yellow.jpg');
   background-size: cover;
   background-color: $energized;
   font-family: 'Voltaire', sans-serif;
@@ -195,7 +195,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   border-radius: 15px;
   text-align: center;
   line-height: 3.2em;
-  background-image: url('/img/curtains_yellow.jpg');
+  background-image: url('img/curtains_yellow.jpg');
   background-size: cover;
   background-color: $energized;
   font-family: 'Voltaire', sans-serif;
@@ -216,7 +216,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .button-spotlight-pass {
-  background-image: url('/img/curtains_yellow.jpg');
+  background-image: url('img/curtains_yellow.jpg');
   background-size: cover;
   text-align: center;
   height: 30px;
@@ -233,7 +233,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 
 .spotlight-stream-header {
-  background-image: url('/img/curtains_yellow.jpg');
+  background-image: url('img/curtains_yellow.jpg');
   background-size: cover;
   text-align: center;
   line-height: 50px;
@@ -243,7 +243,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .spotlight-stream {
-  background-image: url('/img/curtains_yellow_horizontal_narrow.jpg');
+  background-image: url('img/curtains_yellow_horizontal_narrow.jpg');
   background-size: cover;
   margin-top: -10px;
 }
@@ -275,7 +275,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .advice {
-  background-image: url('/img/curtains_blue.jpg');
+  background-image: url('img/curtains_blue.jpg');
   background-size: cover;
   color: white;
   text-align: center;
