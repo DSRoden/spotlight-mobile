@@ -33,12 +33,16 @@
       });
 
       //check to see if rootuser is in the spotlight
-      User.isSpotlightOn().then(function(response){
+      $scope.checkSpotlight = function(){
+        User.isSpotlightOn().then(function(response){
         //console.log('response from isSpotlightOn', response);
         $scope.confirmed = (response.data.confirmed) ? true : false;
         $scope.validated = (response.data.validated) ? true : false;
         if($scope.validated){$scope.confirmed = false;}
       });
+      };
+
+      if($rootScope.rootuser){ $scope.checkSpotlight();}
 
 
       //make a call to db to get all messages for current day
@@ -79,7 +83,9 @@
       };
 
       //select a lottery winner on load
-      $scope.runLottery();
+      if($rootScope.rootuser){
+        $scope.runLottery();
+      }
 
       //set winner as spotlight
       $scope.selectWinner = function(id){

@@ -7,13 +7,13 @@ For example, you might change some of the default colors:
 */
 $light:                           #fff !default;
 $stable:                          #f8f8f8 !default;
-$positive:                        #0d60d9 !default;
+$positive:                        #1c2052 !default;
 $calm:                            #11c1f3 !default;
-$balanced:                        #33cd5f !default;
-$energized:                       #ffd700 !default;
+$balanced:                        #00aBB9 !default;
+$energized:                       #ffc706 !default;
 $assertive:                       #ee2c2c  !default;
 $royal:                           #886aea !default;
-$dark:                            #444 !default;
+$dark:                            #1c2052 !default;
 
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -24,16 +24,24 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import url(http://fonts.googleapis.com/css?family=Voltaire);
 
 .sl-curtains {
-  background-image: url('img/curtains_blue.jpg');
+  background-image: url('http://24.media.tumblr.com/15f62c952a72461700ba67c014a392d4/tumblr_mvqiyv9aqK1r94argo1_500.png');
   background-size: cover;
+  // background-color: $balanced;
+  //background-image: url('img/curtains_blue.jpg');
+  //background-size: cover;
 }
 
 .logo-title {
-  margin-top: 15%;
+  margin-top: 25%;
   text-align: center;
   font-family: 'Voltaire', sans-serif;
   font-size: 4em;
-  color: white;
+  color: $positive;
+}
+
+.logo-area {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .logo {
@@ -42,12 +50,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   border-radius: 100%;
   border: 5px solid $energized;
   margin: 0 auto;
-  margin-top: 13%;
+  margin-top: -13%;
 }
 
 .logo-background-1 {
-  background-image: url('img/curtains.jpg');
-  background-size: cover;
+  // background-image: url('/img/curtains.jpg');
+  // background-size: cover;
 }
 
 .slogan {
@@ -71,23 +79,46 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   line-height: 60px;
   border-radius: 100%;
   background-color: $positive;
-  color: white;
+  color:$energized;
   font-family: 'Voltaire', sans-serif;
   font-size: 1em;
 }
 
 .loginactive {
-  background-image: url('img/curtains.jpg');
-  background-size: cover;
+  //background-image: url('img/curtains.jpg');
+  //background-size: cover;
+  background-color: $energized;
   z-index: $z-index-item;
+  color: $positive;
 }
 
-.joinactive {
-  background-image: url('img/curtains.jpg');
-  background-size: cover;
-  z-index: $z-index-item;
+// .account-buttons {
+//   position: relative;
+// }
+.account-buttons {
+  position: relative;
+  z-index: $z-index-menu;
+  opacity: .9;
 }
 
+.rotateit {
+  position: relative;
+  z-index: $z-index-item;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  margin-top: -30px;
+}
+
+.rotateit p {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
 
 .account-buttons-background-login {
   position: relative;
@@ -114,10 +145,19 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   line-height: 60px;
   border-radius: 100%;
   background-color: $positive;
-  color: white;
+  color: $energized;
   font-family: 'Voltaire', sans-serif;
   font-size: 1em;
 }
+
+.joinactive {
+  //background-image: url('img/curtains.jpg');
+  //background-size: cover;
+  background-color: $energized;
+  z-index: $z-index-item;
+  color: $positive;
+}
+
 
 .account-buttons-background-join {
   position: relative;
@@ -142,6 +182,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   margin: 0 auto;
   margin-top: 13%;
   text-align: center;
+  opacity: .9;
 }
 
 .sl-input-field-password-login{
@@ -151,58 +192,75 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   margin: 0 auto;
   margin-top: 2%;
   text-align: center;
+  opacity: .9;
 }
 
 .signin-button {
+  position: relative;
   margin: 0 auto;
   margin-top: 8%;
-  margin-bottom: 10.5%;
+  margin-bottom: 13%;
   height: 3.2em;
   width: 150px;
   background-color: white;
   border-radius: 15px;
   text-align: center;
   line-height: 3.2em;
-  background-image: url('img/curtains_yellow.jpg');
-  background-size: cover;
-  background-color: $energized;
-  font-family: 'Voltaire', sans-serif;
-  color: $positive
-}
-
-.join {
-  margin-left: 6px;
-  margin-top: 13%;
-  display: inline-block;
-}
-
-.sl-input-field-join {
-  width: 150px;
-  float: left;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  border-radius: 15px;
-  text-align: center;
-}
-
-.register-button {
-  margin: 0 auto;
-  margin-top: 32%;
-  margin-bottom: 1%;
-  height: 3.2em;
-  width: 150px;
-  background-color: white;
-  border-radius: 15px;
-  text-align: center;
-  line-height: 3.2em;
-  background-image: url('img/curtains_yellow.jpg');
-  background-size: cover;
+  //background-image: url('img/curtains_yellow.jpg');
+  //background-size: cover;
   background-color: $energized;
   font-family: 'Voltaire', sans-serif;
   color: $positive;
+  z-index: $z-index-click-block;
+  opacity: .9;
+}
+
+.join {
+  margin: 0 auto;
+  margin-top: 13%;
+}
+
+.logo2 {
+  height: 40px;
+  font-family: 'Voltaire', sans-serif;
+  color: $positive;
+  text-align: center;
+  font-size: 30px;
+}
+
+.sl-input-field-join {
+  margin: 0 auto;
+  width: 250px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  text-align: center;
+  opacity: .9;
+}
+
+.register-button {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 5%;
+  height: 3.2em;
+  width: 150px;
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 3.2em;
+  //background-image: url('img/curtains_yellow.jpg');
+  //background-size: cover;
+  background-color: $energized;
+  font-family: 'Voltaire', sans-serif;
+  color: $positive;
+  z-index: $z-index-tabs;
+  opacity: .9;
 }
 
 //spotlight priviliges
+
+.winning-card {
+  margin-top: 20px;
+}
 
 #message {
   height: 100px;
@@ -215,9 +273,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   font-family: 'Voltaire', sans-serif;
 }
 
+
 .button-spotlight-pass {
-  background-image: url('img/curtains_yellow.jpg');
-  background-size: cover;
+  //background-image: url('img/curtains_yellow.jpg');
+  //background-size: cover;
   text-align: center;
   height: 30px;
   border: 1px solid $positive;
@@ -233,71 +292,132 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 
 .spotlight-stream-header {
-  background-image: url('img/curtains_yellow.jpg');
-  background-size: cover;
+  //background-image: url('img/curtains_yellow.jpg');
+  //background-size: cover;
+  background-color: $energized;
+  color: $positive;
   text-align: center;
-  line-height: 50px;
+  height: 60px;
+  line-height: 60px;
   font-size: 30px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   font-family: 'Voltaire', sans-serif;
+  border-radius: 5px;
+  margin-bottom: -5px;
+  opacity: .8;
 }
 
 .spotlight-stream {
-  background-image: url('img/curtains_yellow_horizontal_narrow.jpg');
-  background-size: cover;
-  margin-top: -10px;
+  //background-image: url('/img/curtains_yellow_horizontal_narrow.jpg');
+  //background-size: cover;
+  background-color: white;
+  opacity: .95;
 }
 
 .take-photo {
   background-color: $positive;
-  color: white;
+  color: $energized;
   text-align: center;
   height: 40px;
   line-height: 2.3em;
   font-family: 'Voltaire', sans-serif;
   font-size: 1.2em;
   margin: 0;
+  margin-top: 7px;
   //border-radius: 15px;
-  border: 1px solid $energized;
+//  border: 1px solid $energized;
+  border-radius: 10px;
 }
 
 .select-photo {
   background-color: $positive;
-  color: white;
+  color: $energized;
   text-align: center;
   height: 40px;
   line-height: 2.3em;
   font-family: 'Voltaire', sans-serif;
   font-size: 1.2em;
   margin-left: 2px;
+  margin-top: 7px;
   //border-radius: 15px;
-  border: 1px solid $energized;
+  //border: 1px solid $energized;
+  border-radius: 10px;
 }
 
 .advice {
-  background-image: url('img/curtains_blue.jpg');
-  background-size: cover;
-  color: white;
+  //background-image: url('img/curtains_blue.jpg');
+  //background-size: cover;
+  background-color: $positive;
+  color: $energized;
   text-align: center;
   height: 40px;
   line-height: 2.3em;
   font-family: 'Voltaire', sans-serif;
   font-size: 1.2em;
   margin-left: 2px;
+  margin-top: 7px;
   //border-radius: 15px;
-  border: 1px solid $energized;
+  //border: 1px solid $energized;
+  border-radius: 10px;
 }
 
 .send {
   height: 40px;
-  background-color: $balanced;
+  width: 40px;
+  margin: 0 auto;
+  background-color: $positive;
   text-align: center;
   font-family: 'Voltaire', sans-serif;
-  font-size: 20px;
-  line-height: 2em;
-  margin-top: -8px;
+  font-size: 15px;
+  line-height: 2.6em;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: $energized;
+  border-radius: 100%;
+  border: 1px solid $energized;
 }
 
+textarea {
+  margin-top: 5px;
+  padding: 20px;
+  color: $positive;
+  font-family: 'Voltaire', sans-serif;
+  border-radius: 15px;
+  //border: 1px solid $positive;
+}
+
+
+.card {
+  margin-top: -10px;
+  //border-radius: 5px;
+  font-family: Calibri;
+  font-size: 1em;
+  border: 1px solid white;
+}
+
+.item {
+  border: none
+}
+
+.photo {
+  margin-bottom: -30px;
+  background-color: $energized;
+}
+
+.item-image {
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.content {
+  margin-bottom: -30px;
+  background-color: $energized;
+}
+
+.footer-item {
+  background-color: $positive;
+  color: white;
+}
 .date {
   float: right;
   font-size: .7em;

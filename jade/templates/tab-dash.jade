@@ -2,22 +2,20 @@ html
   body
     ion-view.sl-curtains
       ion-content.padding
-
-        //-.button.button-positive(ng-if="signedIn", ng-click="logout()") Logout
-        
         .row(ng-if="confirmed")
-          .card
-            .item.item-divider.sl-text Congrats! You've won today's lottery!
-            .item
-              input#spotlightpass(type='password', placeholder="Please enter the password here.", ng-model='spotlight.password')    
-            .item.item-divider
-              .button-spotlight-pass(ng-click='validate()') Sumbit Password
+          .winning-card
+            .card
+              .item.item-divider.sl-text Congrats! You've won today's lottery!
+              .item
+                input#spotlightpass(type='password', placeholder="Please enter the password here.", ng-model='spotlight.password')    
+              .item.item-divider
+                .button-spotlight-pass(ng-click='validate()') Sumbit Password
         
         .row(ng-if="validated")
           .col-33
-            .take-photo(ng-click='snap()') Take Photo
+            .take-photo(ng-src="img/curtains_blue.jpg", ng-click='snap()') +Photo
           .col-33
-            .select-photo(ng-click='select()') Select Photo
+            .select-photo(ng-click='select()') My Photos
           .col-33
             .advice(ng-click='advice = true') ?
 
@@ -30,7 +28,7 @@ html
             .send(ng-click='chat(message.content)') Send
 
 
-        .row(ng-if="validated || !validated")
+        .row
           .col
             .spotlight-stream-header SPOTLIGHT STREAM
             .spotlight-stream
@@ -40,18 +38,19 @@ html
                     .list.card
                       .item.item-image
                         img(ng-src="{{update.url}}")
-                      .item
+                      .item.footer-item
                         .col-33
                         .col-33
                         .col-33.date {{update.time | date : "h:mma"}}
-                  .content
+                  .content(ng-if="update.content")
                     .list.card
                       .item.item-body
                         p {{update.content}}
-                      .item
+                      .item.footer-item
                         .col-33
                         .col-33
                         .col-33.date {{update.time | date : "h:mma"}}
 
+                                              
                   
             

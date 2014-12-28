@@ -2,21 +2,25 @@ html
   body
     ion-view.sl-curtains(title='Account')
       ion-content.paddings
-        .logo-title(ng-show="account", ng-click="showLogo()") SPOTLIGHT
+        .logo-title(ng-show="login", ng-click="showLogo()") SPOTLIGHT
         .login(ng-show="login")
-            input.sl-input-field-username-login(type='text', placeholder="Username", ng-model='user.username')
-            input.sl-input-field-password-login(type='password', placeholder="Password", ng-model='user.password')
+            input.sl-input-field-username-login(type='text', placeholder="Your name please", ng-model='user.username')
+            input.sl-input-field-password-login(type='password', placeholder="Open Sesame...password", ng-model='user.password')
             .signin-button(ng-click='signin(user)') Let me in, let me in!
         .join(ng-show="join")
-            input.sl-input-field-join(type='text', placeholder="Username (A Must)", ng-model='user.username')
-            input.sl-input-field-join(type='email', placeholder="Email (A Must)", ng-model='user.email')
-            input.sl-input-field-join(type='text', placeholder="Phone (Optional)", ng-model='user.phone')
-            input.sl-input-field-join(type='password', placeholder="Password (Shhh!)", ng-model='user.password')
-            .register-button(ng-click='register(user)') Enjoy the show!
-        .logo.logo-background-1(ng-show="logo")
-        .slogan(ng-show="logo") a new story every day 
-        .account-buttons(ng-show="account")
-          .login-button(ng-click="showLogin()", ng-class="{loginactive:login}") Login
-          .join-button(ng-click="showJoin()", ng-class="{joinactive: join}") Join
+            .logo2 A new story every day.
+            input.sl-input-field-join(type='text', placeholder="a rose by any other Name", ng-model='user.username')
+            input.sl-input-field-join(type='email', placeholder="may have the same Email", ng-model='user.email')
+            input.sl-input-field-join(type='text', placeholder="and Phone Number (optional)", ng-model='user.phone')
+            input.sl-input-field-join(type='password', placeholder="so protect it with a Password", ng-model='user.password')
+            .register-button(ng-click='register(user)') Join the story!
+        //-.logo-area
+          img.logo(ng-show="logo")
+        //-.slogan(ng-show="logo") a new story every day 
+        .account-buttons.rotateit(ng-show="account")
+          .login-button(ng-click="showLogin()", ng-class="{loginactive:login}") 
+            p Login
+          .join-button(ng-click="showJoin()", ng-class="{joinactive: join}")
+            p Join
           .account-buttons-background-login
           .account-buttons-background-join

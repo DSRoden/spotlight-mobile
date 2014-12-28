@@ -4,22 +4,24 @@
     <ion-view class="sl-curtains">
       <ion-content class="padding">
         <div ng-if="confirmed" class="row">
-          <div class="card">
-            <div class="item item-divider sl-text">Congrats! You've won today's lottery!</div>
-            <div class="item">
-              <input id="spotlightpass" type="password" placeholder="Please enter the password here." ng-model="spotlight.password">
-            </div>
-            <div class="item item-divider">
-              <div ng-click="validate()" class="button-spotlight-pass">Sumbit Password</div>
+          <div class="winning-card">
+            <div class="card">
+              <div class="item item-divider sl-text">Congrats! You've won today's lottery!</div>
+              <div class="item">
+                <input id="spotlightpass" type="password" placeholder="Please enter the password here." ng-model="spotlight.password">
+              </div>
+              <div class="item item-divider">
+                <div ng-click="validate()" class="button-spotlight-pass">Sumbit Password</div>
+              </div>
             </div>
           </div>
         </div>
         <div ng-if="validated" class="row">
           <div class="col-33">
-            <div ng-click="snap()" class="take-photo">Take Photo</div>
+            <div ng-src="img/curtains_blue.jpg" ng-click="snap()" class="take-photo">+Photo</div>
           </div>
           <div class="col-33">
-            <div ng-click="select()" class="select-photo">Select Photo</div>
+            <div ng-click="select()" class="select-photo">My Photos</div>
           </div>
           <div class="col-33">
             <div ng-click="advice = true" class="advice">?</div>
@@ -35,7 +37,7 @@
             <div ng-click="chat(message.content)" class="send">Send</div>
           </div>
         </div>
-        <div ng-if="validated || !validated" class="row">
+        <div class="row">
           <div class="col">
             <div class="spotlight-stream-header">SPOTLIGHT STREAM</div>
             <div class="spotlight-stream">
@@ -44,19 +46,19 @@
                   <div ng-if="update.url" class="photo">
                     <div class="list card">
                       <div class="item item-image"><img ng-src="{{update.url}}"></div>
-                      <div class="item">
+                      <div class="item footer-item">
                         <div class="col-33"></div>
                         <div class="col-33"></div>
                         <div class="col-33 date">{{update.time | date : "h:mma"}}</div>
                       </div>
                     </div>
                   </div>
-                  <div class="content">
+                  <div ng-if="update.content" class="content">
                     <div class="list card">
                       <div class="item item-body">
                         <p>{{update.content}}</p>
                       </div>
-                      <div class="item">
+                      <div class="item footer-item">
                         <div class="col-33"></div>
                         <div class="col-33"></div>
                         <div class="col-33 date">{{update.time | date : "h:mma"}}</div>

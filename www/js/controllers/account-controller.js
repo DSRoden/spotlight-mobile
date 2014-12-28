@@ -7,7 +7,7 @@
         $scope.user = {};
         $scope.account = true;
         $scope.logo = true;
-        $scope.login = false;
+        $scope.login = true;
         $scope.join = false;
 
         if($rootScope.rootuser){

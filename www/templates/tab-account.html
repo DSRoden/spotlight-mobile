@@ -3,24 +3,27 @@
   <body>
     <ion-view title="Account" class="sl-curtains">
       <ion-content class="paddings">
-        <div ng-show="account" ng-click="showLogo()" class="logo-title">SPOTLIGHT</div>
+        <div ng-show="login" ng-click="showLogo()" class="logo-title">SPOTLIGHT</div>
         <div ng-show="login" class="login">
-          <input type="text" placeholder="Username" ng-model="user.username" class="sl-input-field-username-login">
-          <input type="password" placeholder="Password" ng-model="user.password" class="sl-input-field-password-login">
+          <input type="text" placeholder="Your name please" ng-model="user.username" class="sl-input-field-username-login">
+          <input type="password" placeholder="Open Sesame...password" ng-model="user.password" class="sl-input-field-password-login">
           <div ng-click="signin(user)" class="signin-button">Let me in, let me in!</div>
         </div>
         <div ng-show="join" class="join">
-          <input type="text" placeholder="Username (A Must)" ng-model="user.username" class="sl-input-field-join">
-          <input type="email" placeholder="Email (A Must)" ng-model="user.email" class="sl-input-field-join">
-          <input type="text" placeholder="Phone (Optional)" ng-model="user.phone" class="sl-input-field-join">
-          <input type="password" placeholder="Password (Shhh!)" ng-model="user.password" class="sl-input-field-join">
-          <div ng-click="register(user)" class="register-button">Enjoy the show!</div>
+          <div class="logo2">A new story every day.</div>
+          <input type="text" placeholder="a rose by any other Name" ng-model="user.username" class="sl-input-field-join">
+          <input type="email" placeholder="may have the same Email" ng-model="user.email" class="sl-input-field-join">
+          <input type="text" placeholder="and Phone Number (optional)" ng-model="user.phone" class="sl-input-field-join">
+          <input type="password" placeholder="so protect it with a Password" ng-model="user.password" class="sl-input-field-join">
+          <div ng-click="register(user)" class="register-button">Join the story!</div>
         </div>
-        <div ng-show="logo" class="logo logo-background-1"></div>
-        <div ng-show="logo" class="slogan">a new story every day </div>
-        <div ng-show="account" class="account-buttons">
-          <div ng-click="showLogin()" ng-class="{loginactive:login}" class="login-button">Login</div>
-          <div ng-click="showJoin()" ng-class="{joinactive: join}" class="join-button">Join</div>
+        <div ng-show="account" class="account-buttons rotateit">
+          <div ng-click="showLogin()" ng-class="{loginactive:login}" class="login-button"> 
+            <p>Login</p>
+          </div>
+          <div ng-click="showJoin()" ng-class="{joinactive: join}" class="join-button">
+            <p>Join</p>
+          </div>
           <div class="account-buttons-background-login"></div>
           <div class="account-buttons-background-join"></div>
         </div>
