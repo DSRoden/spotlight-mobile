@@ -8030,7 +8030,6 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   opacity: 0.8; }
 
 .spotlight-stream {
-  background-color: white;
   opacity: 0.95; }
 
 .take-photo {
@@ -8114,8 +8113,33 @@ textarea {
 
 .footer-item {
   background-color: #1c2052;
-  color: white; }
+  color: white;
+  height: 40px; }
 
 .date {
   float: right;
+  margin-top: -20px;
   font-size: 0.7em; }
+
+.boost-button {
+  margin-top: -5px;
+  background-color: #ffc706;
+  width: 50px;
+  text-align: center;
+  height: 20px;
+  color: #1c2052;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-family: 'Voltaire', sans; }
+
+.boosted {
+  background-color: #1c2052;
+  color: #ffc706; }
+
+.total-likes {
+  margin-top: -22px;
+  margin-left: 90px;
+  border-radius: 100%;
+  border: 1px solid #ffc706;
+  text-align: center;
+  width: 40px; }

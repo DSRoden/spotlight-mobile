@@ -9,9 +9,13 @@
       return $http.get(origin + '/photos');
     }
 
+    function getAllAuthenticated(){
+      return $http.get(origin + '/photos/authenticated');
+    }
+
     function upload(b64){
       return $http.post(origin + '/photos', {b64:b64});
     }
-    return {getAll: getAll, upload: upload};
+    return {getAll: getAll, getAllAuthenticated: getAllAuthenticated, upload: upload};
   }]);
 })();

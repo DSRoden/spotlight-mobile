@@ -39,16 +39,16 @@ html
                       .item.item-image
                         img(ng-src="{{update.url}}")
                       .item.footer-item
-                        .col-33
-                        .col-33
+                        .col-33.boost-button(ng-class="{boosted: update.liked}", ng-click="like(update)") Boost!
+                        .col-33.total-likes {{update.likes}}
                         .col-33.date {{update.time | date : "h:mma"}}
                   .content(ng-if="update.content")
                     .list.card
                       .item.item-body
                         p {{update.content}}
                       .item.footer-item
-                        .col-33
-                        .col-33
+                        .col-33.boost-button(ng-class="{boosted: update.liked}", ng-click="like(update)") Boost!
+                        .col-33.total-likes {{update.likes}}
                         .col-33.date {{update.time | date : "h:mma"}}
 
                                               

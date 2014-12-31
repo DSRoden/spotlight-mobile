@@ -310,7 +310,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .spotlight-stream {
   //background-image: url('/img/curtains_yellow_horizontal_narrow.jpg');
   //background-size: cover;
-  background-color: white;
+  //background-color: white;
   opacity: .95;
 }
 
@@ -417,8 +417,36 @@ textarea {
 .footer-item {
   background-color: $positive;
   color: white;
+  height: 40px;
 }
 .date {
   float: right;
+  margin-top: -20px;
   font-size: .7em;
+}
+
+.boost-button {
+  margin-top: -5px;
+  background-color: $energized;
+  width: 50px;
+  text-align: center;
+  height: 20px;
+  color: $positive;
+  border-radius: 5px;
+  font-size: .8em;
+  font-family: 'Voltaire', sans
+}
+
+.boosted {
+  background-color: $positive;
+  color: $energized;
+}
+
+.total-likes {
+  margin-top: -22px;
+  margin-left: 90px;
+  border-radius: 100%;
+  border: 1px solid $energized;
+  text-align: center;
+  width: 40px;
 }

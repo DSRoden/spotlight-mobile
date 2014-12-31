@@ -16,8 +16,6 @@
       $scope.spotlight = {};
       $scope.confirmed = false;
       $scope.validated = false;
-
-      //photo testing
       $scope.photos =[];
 
       //merge photos and messages
@@ -25,33 +23,82 @@
         $scope.updates = _.union($scope.photos, $scope.messages);
       };
 
-      //make a call to db to get all photos for current day
-      Photo.getAll().then(function(response){
-        $scope.photos = response.data;
-        $scope.photos.push({time: '2014-12-24T19:56:25.745Z', url: 'https://cdn3.iconfinder.com/data/icons/pictofoundry-pro-vector-set/512/Avatar-512.png'});
-        $scope.photos.push({time: '2014-12-24T20:40:29.793Z', url: 'https://cdn3.iconfinder.com/data/icons/pictofoundry-pro-vector-set/512/Avatar-512.png'});
-      });
+
+      if(!$rootScope.rootuser){
+
+        //make a call to db to get all photos for current day
+        Photo.getAll().then(function(response){
+          $scope.photos = response.data;
+        });
+
+        //make a call to db to get all messages for current day
+        Message.getAll().then(function(response){
+          //console.log(response);
+          $scope.messages = response.data;
+          $scope.merge();
+        });
+
+      } else {
+
+        //make a call to db to get all photos for current day
+        // Photo.getAllAuthenticated().then(function(response){
+        //   $scope.photos = response.data;
+        // });
+        console.log('authenticated');
+        //make a call to db to get all messages for current day
+        Message.getAllAuthenticated().then(function(response){
+          console.log(response);
+          $scope.messages = response.data;
+          $scope.merge();
+        });
+      }
+
 
       //check to see if rootuser is in the spotlight
       $scope.checkSpotlight = function(){
         User.isSpotlightOn().then(function(response){
-        //console.log('response from isSpotlightOn', response);
-        $scope.confirmed = (response.data.confirmed) ? true : false;
-        $scope.validated = (response.data.validated) ? true : false;
-        if($scope.validated){$scope.confirmed = false;}
-      });
+          //console.log('response from isSpotlightOn', response);
+          $scope.confirmed = (response.data.confirmed) ? true : false;
+          $scope.validated = (response.data.validated) ? true : false;
+          if($scope.validated){$scope.confirmed = false;}
+        });
       };
 
-      if($rootScope.rootuser){ $scope.checkSpotlight();}
+      //when a message is liked
+      $scope.like = function(update){
+        console.log('update that is being liked', update);
+        //emit to db to update the count of likes for that message
+        update.liked = 'yes';
+        if(update.content){
+          $scope.messageLiked($rootScope.rootuser.id, update.id);
+        } else if(update.url){
+          $scope.imageLiked($rootScope.rootuser.id, update.id);
+        }
 
+      };
 
-      //make a call to db to get all messages for current day
-      Message.getAll().then(function(response){
-        //console.log(response);
-        $scope.messages = response.data;
-        $scope.messages.push({time: '2014-12-24T19:56:25.745Z', content: 'hello'});
-        $scope.merge();
-        console.log('all updates after merge', $scope.updates);
+      //function to emit when a message is liked
+      $scope.messageLiked = function(userId, messageId){
+        console.log('emmitting message liked with user id and message id' + userId +', ' + messageId);
+        socket.emit('messageLiked', {userId: userId, messageId: messageId});
+      };
+
+      //function to emit when a message is liked
+      $scope.imageLiked = function(userId, imageId){
+        console.log('emmitting message liked with user id and message id' + userId +', ' + imageId);
+        socket.emit('messageLiked', {userId: userId, imageId: imageId});
+      };
+
+      //when a message has been liked
+      socket.on('newLike', function(data){
+        //gets back the entire message, including id and new likes count
+        console.log('newlike from sockets', data);
+        //reset it's likes to a new count
+        $scope.$apply(function(){
+          for(var i = 0; i < $scope.updates.length; i++){
+            if($scope.updates[i].id === data.id){$scope.updates[i].likes = data.likes;}
+          }
+        });
       });
 
 

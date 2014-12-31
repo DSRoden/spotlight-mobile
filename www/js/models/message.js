@@ -9,6 +9,10 @@
       return $http.get(origin + '/messages');
     }
 
-    return {getAll: getAll};
+    function getAllAuthenticated(){
+      return $http.get(origin + '/messages/authenticated');
+    }
+
+    return {getAll: getAll, getAllAuthenticated: getAllAuthenticated};
   }]);
 })();

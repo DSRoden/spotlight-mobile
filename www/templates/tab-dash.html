@@ -47,8 +47,8 @@
                     <div class="list card">
                       <div class="item item-image"><img ng-src="{{update.url}}"></div>
                       <div class="item footer-item">
-                        <div class="col-33"></div>
-                        <div class="col-33"></div>
+                        <div ng-class="{boosted: update.liked}" ng-click="like(update)" class="col-33 boost-button">Boost!</div>
+                        <div class="col-33 total-likes">{{update.likes}}</div>
                         <div class="col-33 date">{{update.time | date : "h:mma"}}</div>
                       </div>
                     </div>
@@ -59,8 +59,8 @@
                         <p>{{update.content}}</p>
                       </div>
                       <div class="item footer-item">
-                        <div class="col-33"></div>
-                        <div class="col-33"></div>
+                        <div ng-class="{boosted: update.liked}" ng-click="like(update)" class="col-33 boost-button">Boost!</div>
+                        <div class="col-33 total-likes">{{update.likes}}</div>
                         <div class="col-33 date">{{update.time | date : "h:mma"}}</div>
                       </div>
                     </div>
