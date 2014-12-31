@@ -41,9 +41,10 @@
       } else {
 
         //make a call to db to get all photos for current day
-        // Photo.getAllAuthenticated().then(function(response){
-        //   $scope.photos = response.data;
-        // });
+        Photo.getAllAuthenticated().then(function(response){
+          $scope.photos = response.data;
+        });
+
         console.log('authenticated');
         //make a call to db to get all messages for current day
         Message.getAllAuthenticated().then(function(response){
