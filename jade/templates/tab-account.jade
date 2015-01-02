@@ -25,19 +25,20 @@ html
           .account-buttons-background-login
           .account-buttons-background-join
           
-        .archive(ng-show='archive')
-          .archive-header Archive
-          #days
+        .bar.bar-header.archive-header(ng-show='archive') 
+          .archive-header-title Archive
+        .row(ng-show='archive')
+          .col
             .days(ng-repeat="day in days")
-              .item.days(ng-click="showDay(day.id)") {{day.created_at | date : 'MM/dd/yyyy'}}
-    
-        .bar.archive-day-bar(ng-show='day')
+              .day(ng-click="showDay(day.id)") {{day.created_at | date : 'MM/dd/yyyy'}}
+  
+        .bar.bar-header.archive-day-bar(ng-show='day')
           .back-to-archive(ng-click="backToArchive()") Back
           .archived-winner {{dayDetail.username[0]}} | {{dayDetail.created_at | date : 'MM/dd/yyyy'}} | Boosts: {{dayDetail.likes}}
         .row(ng-show='day')
           .col
             .panel.callout.radius.archived-day
-              .updates(ng-repeat="update in dayDetail.updates | orderBy: 'time': true", ng-class="{text : update.content}")
+              .updates(ng-repeat="update in dayDetail.updates | orderBy: 'created_at': true", ng-class="{text : update.content}")
                 .photo.archived(ng-if="update.url")
                   .list.card
                     .item.item-image
@@ -45,7 +46,7 @@ html
                     .item.footer-item
                       .col-33.boost-button.boosted Boosts
                       .col-33.total-likes {{update.likes}}
-                      .col-33.date {{update.time | date : "h:mma"}}
+                      .col-33.date {{update.created_at | date : "h:mma"}}
                 .content.archived(ng-if="update.content")
                   .list.card
                     .item.item-body
@@ -53,5 +54,5 @@ html
                     .item.footer-item
                       .col-33.boost-button.boosted Boosts
                       .col-33.total-likes {{update.likes}}
-                      .col-33.date {{update.time | date : "h:mma"}}
+                      .col-33.date {{update.created_at | date : "h:mma"}}
                               

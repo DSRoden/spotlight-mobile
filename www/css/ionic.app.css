@@ -8039,7 +8039,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   font-family: 'Voltaire', sans-serif; }
 
 .winner-menu {
-  margin-top: 30px; }
+  margin-top: 50px; }
 
 .button-spotlight-pass {
   text-align: center;
@@ -8062,7 +8062,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   font-size: 30px;
   font-family: 'Voltaire', sans-serif;
   border-radius: 5px;
-  margin-top: 40px;
+  margin-top: 50px;
   margin-bottom: -5px;
   opacity: 0.8; }
 
@@ -8187,15 +8187,20 @@ textarea {
 .archive-header {
   text-align: center;
   background-color: #1c2052;
-  height: 40px;
   line-height: 40px;
   font-family: 'Voltaire', sans-serif;
   color: #ffc706;
   font-size: 20px; }
 
+.archive-header-title {
+  margin: 0 auto; }
+
 .days {
   background-color: #eeeeee;
-  border: 1px solid #1c2052; }
+  height: 40px;
+  margin-top: 50px;
+  text-align: center;
+  line-height: 40px; }
 
 .archived-day {
   margin-top: 80px; }

@@ -27,29 +27,31 @@
           <div class="account-buttons-background-login"></div>
           <div class="account-buttons-background-join"></div>
         </div>
-        <div ng-show="archive" class="archive">
-          <div class="archive-header">Archive</div>
-          <div id="days">
+        <div ng-show="archive" class="bar bar-header archive-header"> 
+          <div class="archive-header-title">Archive</div>
+        </div>
+        <div ng-show="archive" class="row">
+          <div class="col">
             <div ng-repeat="day in days" class="days">
-              <div ng-click="showDay(day.id)" class="item days">{{day.created_at | date : 'MM/dd/yyyy'}}</div>
+              <div ng-click="showDay(day.id)" class="day">{{day.created_at | date : 'MM/dd/yyyy'}}</div>
             </div>
           </div>
         </div>
-        <div ng-show="day" class="bar archive-day-bar">
+        <div ng-show="day" class="bar bar-header archive-day-bar">
           <div ng-click="backToArchive()" class="back-to-archive">Back</div>
           <div class="archived-winner">{{dayDetail.username[0]}} | {{dayDetail.created_at | date : 'MM/dd/yyyy'}} | Boosts: {{dayDetail.likes}}</div>
         </div>
         <div ng-show="day" class="row">
           <div class="col">
             <div class="panel callout radius archived-day">
-              <div ng-repeat="update in dayDetail.updates | orderBy: 'time': true" ng-class="{text : update.content}" class="updates">
+              <div ng-repeat="update in dayDetail.updates | orderBy: 'created_at': true" ng-class="{text : update.content}" class="updates">
                 <div ng-if="update.url" class="photo archived">
                   <div class="list card">
                     <div class="item item-image"><img ng-src="{{update.url}}"></div>
                     <div class="item footer-item">
                       <div class="col-33 boost-button boosted">Boosts</div>
                       <div class="col-33 total-likes">{{update.likes}}</div>
-                      <div class="col-33 date">{{update.time | date : "h:mma"}}</div>
+                      <div class="col-33 date">{{update.created_at | date : "h:mma"}}</div>
                     </div>
                   </div>
                 </div>
@@ -61,7 +63,7 @@
                     <div class="item footer-item">
                       <div class="col-33 boost-button boosted">Boosts</div>
                       <div class="col-33 total-likes">{{update.likes}}</div>
-                      <div class="col-33 date">{{update.time | date : "h:mma"}}</div>
+                      <div class="col-33 date">{{update.created_at | date : "h:mma"}}</div>
                     </div>
                   </div>
                 </div>

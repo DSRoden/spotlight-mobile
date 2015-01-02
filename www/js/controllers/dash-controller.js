@@ -218,7 +218,7 @@
       function success(b64){
         Photo.upload(b64).then(function(response){
 
-          $scope.emitMessage({time: response.data.time, url: response.data.url, id: response.data.id});
+          $scope.emitMessage({time: response.data.time, url: response.data.url, id: response.data.id, likes: response.data.likes});
           //console.log('photo sent  successfully');
         });
       }
