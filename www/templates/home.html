@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <ion-view title="Home" class="sl-home">
+      <ion-content class="paddings">
+        <div class="bar">Archive</div>
+        <div id="days">
+          <div class="date">Date</div>
+          <div ng-repeat="day in days" class="days">
+            <div ng-click="showDay(day.id)" class="item">{{day.created_at | date : 'MM/dd/yyyy'}}</div>
+          </div>
+        </div>
+      </ion-content>
+    </ion-view>
+  </body>
+</html>

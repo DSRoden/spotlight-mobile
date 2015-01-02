@@ -2,20 +2,42 @@
     'use strict';
     angular.module('starter')
 
-    .controller('AccountCtrl', function($rootScope, $scope, $state, User){
+    .controller('AccountCtrl', function($rootScope, $scope, $state, User, Day){
 
         $scope.user = {};
-        $scope.account = true;
         $scope.logo = true;
+        $scope.account = true;
         $scope.login = true;
         $scope.join = false;
 
         if($rootScope.rootuser){
-          console.log($rootScope.rootuser);
           $scope.logo = false;
           $scope.login = false;
           $scope.join = false;
           $scope.account = false;
+          $scope.archive = true;
+          $scope.dayDetail = {};
+          $scope.days = [];
+
+          Day.getDays().then(function(response){
+            $scope.days = response.data;
+            console.log('response from getting all days', response);
+          });
+
+          $scope.showDay = function(id){
+            Day.showDay(id).then(function(response){
+              $scope.archive = false;
+              console.log('response from showDay', response);
+              $scope.dayDetail = response.data;
+              $scope.day = true;
+            });
+          };
+
+        $scope.backToArchive = function(){
+          $scope.day = false;
+          $scope.archive = true;
+        };
+
         }
 
         $scope.showLogo = function(){

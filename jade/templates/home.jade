@@ -1,0 +1,11 @@
+html
+  body
+    ion-view.sl-home(title='Home')
+      ion-content.paddings
+        .bar Archive
+        #days
+          .date Date
+          .days(ng-repeat="day in days")
+            .item(ng-click="showDay(day.id)") {{day.created_at | date : 'MM/dd/yyyy'}}
+          
+      

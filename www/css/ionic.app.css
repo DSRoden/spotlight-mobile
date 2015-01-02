@@ -7996,13 +7996,50 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   opacity: 0.9; }
 
 .winning-card {
-  margin-top: 20px; }
+  margin: 0 auto;
+  margin-top: 50px; }
 
 #message {
   height: 100px; }
 
+.spotlight-bar {
+  background-color: #1c2052;
+  color: #EEEEEE;
+  position: relative; }
+
+.spotlight-logo {
+  border-radius: 100%;
+  border: 1px solid #ffc706;
+  width: 12px;
+  height: 12px;
+  margin-top: 11px;
+  margin-left: 2px; }
+
+.spotlight-title {
+  font-family: 'Voltaire', sans-serif;
+  font-size: 15px;
+  margin-left: 5px;
+  margin-top: 3px;
+  line-height: 30px; }
+
+.button-logout {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  width: 50px;
+  background-color: #ffc706;
+  height: 25px;
+  color: #1c2052;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 5px;
+  font-family: 'Voltaire', sans-serif; }
+
 .sl-text {
   font-family: 'Voltaire', sans-serif; }
+
+.winner-menu {
+  margin-top: 30px; }
 
 .button-spotlight-pass {
   text-align: center;
@@ -8023,9 +8060,9 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   height: 60px;
   line-height: 60px;
   font-size: 30px;
-  margin-bottom: 10px;
   font-family: 'Voltaire', sans-serif;
   border-radius: 5px;
+  margin-top: 40px;
   margin-bottom: -5px;
   opacity: 0.8; }
 
@@ -8143,3 +8180,49 @@ textarea {
   border: 1px solid #ffc706;
   text-align: center;
   width: 40px; }
+
+.archive {
+  text-align: center; }
+
+.archive-header {
+  text-align: center;
+  background-color: #1c2052;
+  height: 40px;
+  line-height: 40px;
+  font-family: 'Voltaire', sans-serif;
+  color: #ffc706;
+  font-size: 20px; }
+
+.days {
+  background-color: #eeeeee;
+  border: 1px solid #1c2052; }
+
+.archived-day {
+  margin-top: 80px; }
+
+.archive-day-bar {
+  height: 50px;
+  background-color: #1c2052; }
+
+.back-to-archive {
+  background-color: #ffc706;
+  text-align: center;
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  font-family: 'Voltaire', sans-serif;
+  margin-top: 3px;
+  margin-left: 15px;
+  margin-right: 5px;
+  line-height: 28px; }
+
+.archived-winner {
+  font-family: 'Voltaire', sans-serif;
+  text-align: center;
+  line-height: 40px;
+  margin-left: 20px;
+  color: #ffc706;
+  font-size: 15px; }
+
+.archived {
+  background-color: transparent; }

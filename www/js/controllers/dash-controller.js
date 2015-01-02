@@ -17,6 +17,7 @@
       $scope.confirmed = false;
       $scope.validated = false;
       $scope.photos =[];
+      $scope.loggedIn = false;
 
       //merge photos and messages
       $scope.merge = function(){
@@ -25,6 +26,8 @@
 
 
       if(!$rootScope.rootuser){
+
+        $scope.loggedIn = true;
 
         //make a call to db to get all photos for current day
         Photo.getAll().then(function(response){
@@ -39,6 +42,13 @@
         });
 
       } else {
+
+        User.isSpotlightOn().then(function(response){
+          //console.log('response from isSpotlightOn', response);
+          $scope.confirmed = (response.data.confirmed) ? true : false;
+          $scope.validated = (response.data.validated) ? true : false;
+          if($scope.validated){$scope.confirmed = false;}
+        });
 
         //make a call to db to get all photos for current day
         Photo.getAllAuthenticated().then(function(response){
@@ -55,15 +65,15 @@
       }
 
 
-      //check to see if rootuser is in the spotlight
-      $scope.checkSpotlight = function(){
-        User.isSpotlightOn().then(function(response){
-          //console.log('response from isSpotlightOn', response);
-          $scope.confirmed = (response.data.confirmed) ? true : false;
-          $scope.validated = (response.data.validated) ? true : false;
-          if($scope.validated){$scope.confirmed = false;}
-        });
-      };
+      // //check to see if rootuser is in the spotlight
+      // $scope.checkSpotlight = function(){
+      //   User.isSpotlightOn().then(function(response){
+      //     //console.log('response from isSpotlightOn', response);
+      //     $scope.confirmed = (response.data.confirmed) ? true : false;
+      //     $scope.validated = (response.data.validated) ? true : false;
+      //     if($scope.validated){$scope.confirmed = false;}
+      //   });
+      // };
 
       //when a message is liked
       $scope.like = function(update){
@@ -87,7 +97,7 @@
       //function to emit when a message is liked
       $scope.imageLiked = function(userId, imageId){
         console.log('emmitting message liked with user id and message id' + userId +', ' + imageId);
-        socket.emit('messageLiked', {userId: userId, imageId: imageId});
+        socket.emit('imageLiked', {userId: userId, imageId: imageId});
       };
 
       //when a message has been liked
@@ -180,7 +190,7 @@
           $scope.$apply(function(){
             $scope.confirmed = false;
             $scope.validated = false;
-            $scope.messages = [];
+            $scope.updates = [];
           });
         }
       });
@@ -252,7 +262,7 @@
       $scope.logout = function(){
           User.logout().then(function(){
              console.log('logout successful');
-              $rootScope.rootuser = {};
+              $rootScope.rootuser = null;
              $state.go('tab.account');
               $scope.dashboard = false;
           }, function(){

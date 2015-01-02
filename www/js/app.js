@@ -78,6 +78,15 @@ angular.module('starter', ['ionic', 'starter.services'])
           controller: 'AccountCtrl'
         }
       }
+    })
+    .state('home', {
+      url: '/home',
+      views: {
+        'home': {
+          templateUrl: 'templates/home.html',
+          controller: 'HomeCtrl'
+        }
+      }
     });
 
   // if none of the above states are matched, use this as the fallback

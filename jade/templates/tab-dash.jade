@@ -1,6 +1,10 @@
 html
   body
     ion-view.sl-curtains
+      .bar.bar-header.spotlight-bar
+        .spotlight-title SPOTLIGHT
+        .spotlight-logo
+        .button-logout(ng-show="!loggedIn", ng-click="logout()") Logout
       ion-content.padding
         .row(ng-if="confirmed")
           .winning-card
@@ -11,7 +15,7 @@ html
               .item.item-divider
                 .button-spotlight-pass(ng-click='validate()') Sumbit Password
         
-        .row(ng-if="validated")
+        .row.winner-menu(ng-if="validated")
           .col-33
             .take-photo(ng-src="img/curtains_blue.jpg", ng-click='snap()') +Photo
           .col-33
@@ -47,7 +51,7 @@ html
                       .item.item-body
                         p {{update.content}}
                       .item.footer-item
-                        .col-33.boost-button(ng-class="{boosted: update.liked}", ng-click="like(update)") Boost!text
+                        .col-33.boost-button(ng-class="{boosted: update.liked}", ng-click="like(update)") Boost!
                         .col-33.total-likes {{update.likes}}
                         .col-33.date {{update.time | date : "h:mma"}}
 

@@ -258,8 +258,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 //spotlight priviliges
 
+
 .winning-card {
-  margin-top: 20px;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 #message {
@@ -269,8 +271,49 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 //spotlight page
 
+.spotlight-bar {
+  background-color: $positive;
+  color: #EEEEEE;
+  position: relative;
+}
+
+.spotlight-logo {
+  border-radius: 100%;
+  border: 1px solid $energized;
+  width: 12px;
+  height: 12px;
+  margin-top: 11px;
+  margin-left: 2px;
+}
+
+.spotlight-title {
+  font-family: 'Voltaire', sans-serif;
+  font-size: 15px;
+  margin-left: 5px;
+  margin-top: 3px;
+  line-height: 30px;
+}
+
+.button-logout {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  width: 50px;
+  background-color: $energized;
+  height: 25px;
+  color: $positive;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 5px;
+  font-family: 'Voltaire', sans-serif;
+}
+
 .sl-text {
   font-family: 'Voltaire', sans-serif;
+}
+
+.winner-menu {
+  margin-top: 30px;
 }
 
 
@@ -300,9 +343,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   height: 60px;
   line-height: 60px;
   font-size: 30px;
-  margin-bottom: 10px;
   font-family: 'Voltaire', sans-serif;
   border-radius: 5px;
+  margin-top: 40px;
   margin-bottom: -5px;
   opacity: .8;
 }
@@ -396,7 +439,9 @@ textarea {
 }
 
 .item {
-  border: none
+  border: none;
+  //background-color: #EEEEE9;
+
 }
 
 .photo {
@@ -449,4 +494,59 @@ textarea {
   border: 1px solid $energized;
   text-align: center;
   width: 40px;
+}
+
+
+.archive  {
+  text-align: center;
+}
+
+.archive-header {
+  text-align: center;
+  background-color: $positive;
+  height: 40px;
+  line-height: 40px;
+  font-family: 'Voltaire', sans-serif;
+  color: $energized;
+  font-size: 20px;
+}
+
+.days {
+  background-color: #eeeeee;
+  border: 1px solid $positive;
+}
+
+.archived-day {
+  margin-top: 80px;
+}
+
+.archive-day-bar {
+  height: 50px;
+  background-color: $positive;
+}
+
+.back-to-archive {
+  background-color: $energized;
+  text-align: center;
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  font-family: 'Voltaire', sans-serif;
+  margin-top: 3px;
+  margin-left: 15px;
+  margin-right: 5px;
+  line-height: 28px;
+}
+
+.archived-winner {
+  font-family: 'Voltaire', sans-serif;
+  text-align: center;
+  line-height: 40px;
+  margin-left: 20px;
+  color: $energized;
+  font-size: 15px;
+}
+
+.archived {
+  background-color: transparent;
 }
